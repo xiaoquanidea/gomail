@@ -141,6 +141,7 @@ func (w *messageWriter) addFiles(files []*file, isAttachment bool) {
 				f.setHeader("Content-Id", "<"+f.Name+">")
 			}
 		}
+
 		w.writeHeaders(f.Header)
 		w.writeBody(f.CopyFunc, Base64)
 	}
